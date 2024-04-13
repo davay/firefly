@@ -7,7 +7,13 @@ sudo sh ./get-docker.sh
 
 Replace <KEY> and <DB_PASSWORD> in .env and .db.env
 
-Start container 
+Enable docker to be run as non-root user 
+
+```
+sudo usermod -aG docker ${USER}
+```
+
+Re-login, and then start container 
 
 ```
 docker compose -f docker-compose.yml up -d --pull=always
